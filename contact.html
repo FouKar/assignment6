@@ -107,7 +107,7 @@
       </div>
     </nav>
 
-    <form action="https://httpbin.org/post" method="post">
+    <form action="https://httpbin.org/post" method="post" onsubmit="return validateJS();">
       <div class="col-md-6 d-flex flex-column offset-md-3 order-md-1">
         <h2 class="mb-3 mt-3 text-center contactHd">Any Questions or Concerns?</h2>
 
@@ -417,6 +417,8 @@
       </div>
     </form>
 
+    <div class="frmErr"></div>
+
     <footer class="footer">
       <div class="container-fluid text-md-left">
         <div class="row">
@@ -453,7 +455,7 @@
               Get updates on the latest deals and promotions. Subcribe now and get additional
               discounts and rewards.
             </p>
-            <form action="https://formspree.io/mgelaqnd" method="POST">
+            <form action="https://formspree.io/mgelaqnd" method="POST" onsubmit="validateJS();">
               <input type="email" name="_replyto" placeholder="ex. Joe@email.com" />
               <button id="btnsub" class="text-light" type="submit" value="Send">Submit</button>
             </form>

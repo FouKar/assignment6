@@ -285,3 +285,66 @@ $(document).ready(function() {
     closeNav();
   });
 });
+
+
+  //Client Side Form Validation
+  
+  let validateJS= function(){
+  let fn=document.getElementById('firstName').value.trim();
+  let ln=document.getElementById('lastName').value.trim();
+  let full=fn+ln;
+  full.toUpperCase();
+  let alpha=true;
+  if(full.length>4){
+  for(i of full){
+    if (full[i]<"A" || full[i]>"Z"){
+      alpha=false;
+    }
+  }
+  }
+else{
+  alpha=false;
+}
+
+
+let email=false;
+let mailtest=/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$/;
+let ef = document.getElementById('email').value;
+if(ef.match(mailtest)){
+  email=true; 
+}
+
+
+let adrs= false;
+let adtest=/^\d+\s[A-za-z]+\s[A-Za-z]+[.]?(\s[A-Za-z]+[.]?)*/;
+let af= document.getElementById('address').value;
+if(af.match(adtest)){
+  adrs=true; 
+}
+
+let zip= false;
+let ziptest= /^[A-Za-z][0-9][A-Za-z]\s?[0-9][A-Za-z][0-9]$/;
+let zpf = document.getElementById('PostalCode').value;
+if(zpf.match(ziptest)){
+  zip = true;
+}
+
+
+let pn= false;
+let pntest= /^[0-9]{3}[-][0-9]{3}[-][0-9]{4}$/;
+let pnf = document.getElementById('phoneNum').value;
+if(pnf.match(pntest)){
+  pn = true;
+}
+
+
+let txt= true;
+let txtF= document.getElementById("message").value;
+if(txtF.trim().length===0){
+  txt=false;
+}
+
+
+return (txt && pn && zip && email && alpha && adrs);
+};
+
